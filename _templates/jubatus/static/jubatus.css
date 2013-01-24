@@ -456,3 +456,47 @@ table.field-list tr:nth-child(even) {
 td.field-body table {
   margin: 1em;
 }
+
+/* Jubatus Members */
+div.member-box {
+    margin: 20px;
+    border-bottom: solid 1px #cccccc;
+}
+div.member-photo {
+    float: left;
+    margin: 0px 10px 10px 10px;
+    padding: 0px 10px 10px 10px;
+}
+div.member-photo img {
+    width: 90px;
+}
+div.member-relation {
+    font-size: 90%;
+}
+span.member-name {
+    font-size: 120%;
+    font-weight: bold;
+    margin-right: 10px;
+}
+ul.member-social {
+    list-style: none;
+}
+ul.member-social li {
+    float: left;
+    margin-left: 10px;
+}
+ul.member-social li.github {
+    background: url(../_static/icon/github.png) no-repeat top left;
+}
+ul.member-social li.twitter {
+    background: url(../_static/icon/twitter.png) no-repeat top left;
+}
+ul.member-social li.web {
+    background: url(../_static/icon/web.png) no-repeat top left;
+}
+ul.member-social li.blog {
+    background: url(../_static/icon/blog.png) no-repeat top left;
+}
+ul.member-social li.mail {
+    background: url(../_static/icon/mail.png) no-repeat top left;
+}
