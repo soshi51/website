@@ -483,25 +483,27 @@ ul.member-social {
 }
 ul.member-social li {
     float: left;
-    margin-left: 10px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    background-position: left 2px;
 }
 ul.member-social li.github {
     /* GitHub logo is used under the license: https://github.com/github/media */
-    background: url(../_static/icon/github.png) no-repeat top left;
+    background-image: url(../_static/icon/github.png);
 }
 ul.member-social li.twitter {
     /* Twitter logo is used under the license: https://twitter.com/logo */
-    background: url(../_static/icon/twitter.png) no-repeat top left;
+    background-image: url(../_static/icon/twitter.png);
 }
 ul.member-social li.web {
     /* Icon from Jonas Rask Design; used under the license: http://www.iconarchive.com/show/danish-royalty-free-icons-by-jonas-rask.html */
-    background: url(../_static/icon/web.png) no-repeat top left;
+    background-image: url(../_static/icon/web.png);
 }
 ul.member-social li.blog {
     /* Icon from Jonas Rask Design; used under the license: http://www.iconarchive.com/show/danish-royalty-free-icons-by-jonas-rask.html */
-    background: url(../_static/icon/blog.png) no-repeat top left;
+    background-image: url(../_static/icon/blog.png);
 }
 ul.member-social li.mail {
     /* Icon from Jonas Rask Design; used under the license: http://www.iconarchive.com/show/danish-royalty-free-icons-by-jonas-rask.html */
-    background: url(../_static/icon/mail.png) no-repeat top left;
+    background-image: url(../_static/icon/mail.png);
 }
