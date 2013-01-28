@@ -18,6 +18,7 @@ Members
    :name: Yuya Unno
    :photo: https://secure.gravatar.com/avatar/6c57f92b2c8b062d5d41d588c0b9bc57?s=90
    :role: Project Lead
+   :expertise: Natural Language Processing, Text Mining
    :contrib: Project Management, Core Development
    :github: unnonouno
    :twitter: unnonouno
@@ -28,7 +29,7 @@ Members
    :name: Seiya Tokui
    :photo: https://secure.gravatar.com/avatar/?s=90
    :role: Developer
-   :contrib: Core Development
+   :contrib: Algorithm Design and Development
    :github: beam2d
    :twitter: beam2d
 

@@ -15,6 +15,7 @@ Usage
    :name: Your Name
    :photo: http://example.com/photo.png
    :role: Developer
+   :expertise: NLP
    :contrib: Project Management, Core Development
    :github: account_name
    :twitter: account_name
@@ -22,7 +23,7 @@ Usage
    :blog: http://blog.example.com/
    :email: me@example.com
 
-Note that "name", "photo", "role", and "contrib" are mandatory. Others are optional.
+Note that "name", "photo", and "role" are mandatory. Others are optional.
 
 """
 
@@ -35,26 +36,44 @@ class jubamember(nodes.General, nodes.Element):
     pass
 
 def html_visit_jubamember_node(self, node):
-    member_box = u""
-
-    # Header
-    member_box += u"""
+    member_box = u"""
         <div class="member-box">
+    """
+
+    # Photo
+    member_box += u"""
           <div class="member-photo">
-            <img src="%s">
+            <img src="%s" alt="%s">
           </div>
+    """ % (node['photo'], node['name'])
+
+    # Name & Role
+    member_box += u"""
           <div class="member-details">
             <div><span class="member-name">%s</span> ― %s</div>
+    """ % (node['name'], node['role'])
+
+    # Expertise and Contributions
+    member_box += u"""
             <div class="member-relation">
-              <div class="member-contrib">%s</div>
-              <ul class="member-social">
-    """ % (node['photo'], node['name'], node['role'], node['contrib'])
+    """
+    if 'expertise' in node:
+        member_box += u"""
+              <div class="member-expertise">Expertise: %s</div>
+        """ % node['expertise']
+    if 'contrib' in node:
+        member_box += u"""
+              <div class="member-contrib">Contributions: %s</div>
+        """ % node['contrib']
 
     # Social Links
+    member_box += u"""
+              <ul class="member-social">
+    """
     if 'github' in node:
         member_box += u"""
                 <li class="github"><a href="https://github.com/%s">GitHub</a></li>
-        """ % (node['github'])
+        """ % node['github']
     if 'twitter' in node:
         member_box += u"""
                 <li class="twitter"><a href="http://twitter.com/%s">Twitter</a></li>
@@ -94,6 +113,7 @@ class JubatusMemberDirective(Directive):
         'name': unicode,
         'photo': directives.uri,
         'role': unicode,
+        'expertise': unicode,
         'contrib': unicode,
         'github': directives.uri,
         'twitter': directives.uri,
@@ -106,7 +126,7 @@ class JubatusMemberDirective(Directive):
         node = jubamember()
         for key in self.options:
             node[key] = self.options[key]
-        for key in ['name', 'photo', 'role', 'contrib']:
+        for key in ['name', 'photo', 'role']:
             if not key in node:
                 return [self.state.document.reporter.error("Required key %s not found" % key, line=self.lineno)]
         return [node]
